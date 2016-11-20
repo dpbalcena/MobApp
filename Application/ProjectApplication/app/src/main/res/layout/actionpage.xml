@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/addlostpage"
+        style="?android:textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="5dp"
+        android:text="ADD LOST ITEM"
+        android:textStyle="bold"
+        android:background="@drawable/login_button_bg"
+        android:textColor="@color/white"/>
+
+    <Button
+        android:id="@+id/addfoundpage"
+        style="?android:textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="5dp"
+        android:text="ADD FOUND ITEM"
+        android:textStyle="bold"
+        android:background="@drawable/login_button_bg"
+        android:textColor="@color/white"/>
+
+    <Button
+        android:id="@+id/searchlostpage"
+        style="?android:textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="5dp"
+        android:text="SEARCH FOR LOST ITEM"
+        android:textStyle="bold"
+        android:background="@drawable/login_button_bg"
+        android:textColor="@color/white"/>
+
+    <Button
+        android:id="@+id/searchfoundpage"
+        style="?android:textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="5dp"
+        android:text="SEARCH FOR FOUND ITEM"
+        android:textStyle="bold"
+        android:background="@drawable/login_button_bg"
+        android:textColor="@color/white"/>
+
+
+</LinearLayout>
