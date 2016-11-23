@@ -4,12 +4,12 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:text="Add lost item"
+        android:text="Edit Profile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:textSize="24sp"/>
+        android:gravity="center"
+        android:textSize="30dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,7 +17,8 @@
         android:orientation="vertical"
         android:layout_marginStart="55dp"
         android:layout_marginEnd="55dp"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="50dp">
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -26,31 +27,16 @@
 
 
             <EditText
-                android:id="@+id/item_ali"
+                android:id="@+id/username_edit_profile"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:hint="item"
+                android:hint="username"
                 android:imeOptions="actionNext"
                 android:maxLines="1"
                 android:background="@color/login_text_bg"
                 android:layout_marginBottom="10dp"
                 android:textColor="@color/login_text_color"
                 android:textColorHint="@color/login_text_color"/>
-
-
-            <EditText
-                android:id="@+id/brand_ali"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:hint="brand"
-                android:imeActionId="@+id/login"
-                android:imeOptions="actionDone"
-                android:maxLines="1"
-                android:background="@color/login_text_bg"
-                android:layout_marginBottom="10dp"
-                android:textColor="@color/login_text_color"
-                android:textColorHint="@color/login_text_color"/>
-
 
 
         </LinearLayout>
@@ -60,71 +46,56 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-
             <EditText
-                android:id="@+id/color_ali"
+                android:id="@+id/email_edit_profile"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:hint="color"
-                android:imeActionId="@+id/login"
-                android:imeOptions="actionNext"
+                android:hint="email address"
+                android:inputType="textEmailAddress"
                 android:maxLines="1"
                 android:background="@color/login_text_bg"
                 android:layout_marginBottom="10dp"
                 android:textColor="@color/login_text_color"
                 android:textColorHint="@color/login_text_color"/>
 
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/gender_spinner_profile" />
 
             <EditText
-                android:id="@+id/serial_ali"
+                android:id="@+id/age_edit_profile"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:hint="serial number"
-                android:imeActionId="@+id/login"
-                android:imeOptions="actionNext"
+                android:hint="age"
+                android:inputType="number"
                 android:maxLines="1"
                 android:background="@color/login_text_bg"
                 android:layout_marginBottom="10dp"
                 android:textColor="@color/login_text_color"
                 android:textColorHint="@color/login_text_color"/>
-
             <EditText
-                android:id="@+id/lastseen_ali"
+                android:id="@+id/location_edit_profile"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:hint="last seen at"
-                android:imeActionId="@+id/login"
-                android:imeOptions="actionNext"
+                android:hint="location"
+                android:inputType="text"
                 android:maxLines="1"
                 android:background="@color/login_text_bg"
                 android:layout_marginBottom="10dp"
                 android:textColor="@color/login_text_color"
                 android:textColorHint="@color/login_text_color"/>
-
-            <EditText
-                android:id="@+id/datelost_ali"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:hint="date lost"
-                android:imeActionId="@+id/login"
-                android:imeOptions="actionNext"
-                android:maxLines="1"
-                android:background="@color/login_text_bg"
-                android:layout_marginBottom="10dp"
-                android:textColor="@color/login_text_color"
-                android:textColorHint="@color/login_text_color"/>
-
 
         </LinearLayout>
 
         <Button
-            android:id="@+id/submit_ali"
+            android:id="@+id/signup_btn_profile"
             style="?android:textAppearanceSmall"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="5dp"
-            android:text="SUBMIT"
+            android:text="SIGN UP"
             android:textStyle="bold"
             android:background="@drawable/login_button_bg"
             android:textColor="@color/white"/>

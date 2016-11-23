@@ -10,26 +10,22 @@ import android.widget.Button;
  * Created by School on 11/20/2016.
  */
 
-public class AddFoundItemActivity extends AppCompatActivity implements View.OnClickListener {
-
-    Button submitafi;
+public class ProfileActivity extends AppCompatActivity implements View.OnClickListener {
 
     public void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.addfounditempage);
+        setContentView(R.layout.profilepage);
 
-        submitafi = (Button) findViewById(R.id.submit_afi);
-        submitafi.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         switch(view.getId()) {
-            case R.id.submit_afi:
-                Intent intent8 = new Intent(AddFoundItemActivity.this, MainActivity.class);
-                startActivity(intent8);
+/*            case R.id.signup_btn:
+                Intent intent3 = new Intent(ProfileActivity.this, MainActivity.class);
+                startActivity(intent3);
                 break;
-
+*/
         }
     }
 }
