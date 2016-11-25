@@ -12,31 +12,45 @@ import android.widget.Button;
 
 public class ActionActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button signupbtn;
-    Button loginbtn;
+    Button ali;
+    Button afi;
+    Button sli;
+    Button sfi;
 
     public void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.actionpage);
-        signupbtn = (Button) findViewById(R.id.signuppage);
-        loginbtn = (Button) findViewById(R.id.loginpage);
-        signupbtn.setOnClickListener(this);
-        loginbtn.setOnClickListener(this);
+
+        ali = (Button) findViewById(R.id.addlostpage);
+        ali.setOnClickListener(this);
+        afi = (Button) findViewById(R.id.addfoundpage);
+        afi.setOnClickListener(this);
+        sli = (Button) findViewById(R.id.searchlostpage);
+        sli.setOnClickListener(this);
+        sfi = (Button) findViewById(R.id.searchfoundpage);
+        sfi.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         switch(view.getId()) {
-            case R.id.loginpage:
-                Intent intent = new Intent(ActionActivity.this, LoginActivity.class);
-                startActivity(intent);
+            case R.id.addlostpage:
+                Intent intent4 = new Intent(ActionActivity.this, AddLostItemActivity.class);
+                startActivity(intent4);
                 break;
-            case R.id.signuppage:
-                Intent intent1 = new Intent(ActionActivity.this, SignupActivity.class);
-                startActivity(intent1);
+            case R.id.addfoundpage:
+                Intent intent5 = new Intent(ActionActivity.this, AddFoundItemActivity.class);
+                startActivity(intent5);
+                break;
+            case R.id.searchlostpage:
+                Intent intent6 = new Intent(ActionActivity.this, SearchLostItemActivity.class);
+                startActivity(intent6);
+                break;
+            case R.id.searchfoundpage:
+                Intent intent7 = new Intent(ActionActivity.this, SearchFoundItemActivity.class);
+                startActivity(intent7);
                 break;
         }
-
     }
 }
 

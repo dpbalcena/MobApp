@@ -10,25 +10,27 @@ import android.widget.Button;
  * Created by School on 11/20/2016.
  */
 
-public class SignupActivity extends AppCompatActivity implements View.OnClickListener {
-    Button signup;
+public class SearchLostItemActivity extends AppCompatActivity implements View.OnClickListener {
+
+    Button submitsli;
 
     public void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.signuppage);
+        setContentView(R.layout.searchlostitempage);
 
-        signup = (Button) findViewById(R.id.signup_btn);
-        signup.setOnClickListener(this);
+        submitsli = (Button) findViewById(R.id.submit_sli);
+        submitsli.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         switch(view.getId()) {
-            case R.id.signup_btn:
-                Intent intent3 = new Intent(SignupActivity.this, ActionActivity.class);
-                startActivity(intent3);
+            case R.id.submit_sli:
+                Intent intent11 = new Intent(SearchLostItemActivity.this, MainActivity.class);
+                startActivity(intent11);
                 break;
-        }
+
+         }
     }
 }
 

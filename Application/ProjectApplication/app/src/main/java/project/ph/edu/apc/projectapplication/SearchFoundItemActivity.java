@@ -10,24 +10,26 @@ import android.widget.Button;
  * Created by School on 11/20/2016.
  */
 
-public class SignupActivity extends AppCompatActivity implements View.OnClickListener {
-    Button signup;
+public class SearchFoundItemActivity extends AppCompatActivity implements View.OnClickListener {
+
+    Button submitsfi;
 
     public void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.signuppage);
+        setContentView(R.layout.searchfounditempage);
 
-        signup = (Button) findViewById(R.id.signup_btn);
-        signup.setOnClickListener(this);
+        submitsfi = (Button) findViewById(R.id.submit_sfi);
+        submitsfi.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         switch(view.getId()) {
-            case R.id.signup_btn:
-                Intent intent3 = new Intent(SignupActivity.this, ActionActivity.class);
-                startActivity(intent3);
+            case R.id.submit_sfi:
+                Intent intent10 = new Intent(SearchFoundItemActivity.this, MainActivity.class);
+                startActivity(intent10);
                 break;
+
         }
     }
 }
