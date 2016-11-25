@@ -18,8 +18,6 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
-    Button signupbtn;
-    Button loginbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,10 +26,6 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        signupbtn = (Button) findViewById(R.id.signuppage);
-        loginbtn = (Button) findViewById(R.id.loginpage);
-        signupbtn.setOnClickListener(this);
-        loginbtn.setOnClickListener(this);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -84,16 +78,11 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            // Handle the camera action
+            Intent intent5 = new Intent(MainActivity.this, ProfileActivity.class);
+            startActivity(intent5);
         } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+            Intent intent4 = new Intent(MainActivity.this, ActionActivity.class);
+            startActivity(intent4);
 
         }
 
@@ -105,15 +94,5 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onClick(View view) {
 
-        switch(view.getId()) {
-            case R.id.loginpage:
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.signuppage:
-                Intent intent1 = new Intent(MainActivity.this, SignupActivity.class);
-                startActivity(intent1);
-                break;
-        }
     }
 }
