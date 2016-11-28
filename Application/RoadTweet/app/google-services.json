@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "344218975420",
+    "firebase_url": "https://roadtweet-6f7b0.firebaseio.com",
+    "project_id": "roadtweet-6f7b0",
+    "storage_bucket": "roadtweet-6f7b0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:344218975420:android:82353edff9f89fef",
+        "android_client_info": {
+          "package_name": "ph.edu.apc.roadtweet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "344218975420-1lt2lt45th0b3i4oob1c10vsfmap83ru.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbPpNXBDkpHhiW5cD7yvLu1unvhP9mYq4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
