@@ -18,11 +18,10 @@ public class LogInActivity extends AppCompatActivity {
     protected Button logInButton;
     protected TextView signUpTextView;
     private FirebaseAuth mFirebaseAuth;
-
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
+
         // Initialize FirebaseAuth
         mFirebaseAuth = FirebaseAuth.getInstance();
 
@@ -59,7 +58,7 @@ public class LogInActivity extends AppCompatActivity {
                     mFirebaseAuth.signInWithEmailAndPassword(email, password)
                             .addOnCompleteListener(LogInActivity.this, new OnCompleteListener<authresult>() {
                                 @Override
-                                public void onComplete(@NonNull Task</authresult><authresult>task) {
+                                public void onComplete(@NonNull Task</authresult><authresult> task) {
                                     if (task.isSuccessful()) {
                                         Intent intent = new Intent(LogInActivity.this, MainActivity.class);
                                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
