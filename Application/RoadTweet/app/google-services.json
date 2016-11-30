@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "815923030908",
+    "firebase_url": "https://roadtweet-5a2fe.firebaseio.com",
+    "project_id": "roadtweet-5a2fe",
+    "storage_bucket": "roadtweet-5a2fe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:815923030908:android:82353edff9f89fef",
+        "android_client_info": {
+          "package_name": "ph.edu.apc.roadtweet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "815923030908-acrss5ggods4vb5q7q1ef3cv9dii0qjh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ph.edu.apc.roadtweet",
+            "certificate_hash": "9F7A6F5628F188077122DBACEC66E7EA9C16C9F5"
+          }
+        },
+        {
+          "client_id": "815923030908-bpiqh409v579350pbf6fbpm9cprj5g48.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUL-pHjBfm-6NJozq2GzwP9OpCXK8wmuc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "815923030908-bpiqh409v579350pbf6fbpm9cprj5g48.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
