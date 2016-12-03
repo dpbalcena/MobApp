@@ -11,8 +11,10 @@ public class ChatMessage {
     private String messageText;
     private String messageUser;
     private long messageTime;
+    private String messageLocation;
 
-    public ChatMessage(String messageText, String messageUser) {
+    public ChatMessage(String messageLocation, String messageText, String messageUser) {
+        this.messageLocation = messageLocation;
         this.messageText = messageText;
         this.messageUser = messageUser;
         messageTime = new Date().getTime();
@@ -21,7 +23,13 @@ public class ChatMessage {
     public ChatMessage(){
 
     }
+    public String getMessageLocation() {
+        return messageLocation;
+    }
 
+    public void setMessageLocation(String messageLocation) {
+        this.messageLocation = messageLocation;
+    }
     public String getMessageText() {
         return messageText;
     }

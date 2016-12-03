@@ -24,7 +24,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity {
 
     private static final int SIGN_IN_REQUEST_CODE = 1;
     private FirebaseListAdapter<ChatMessage> adapter;
@@ -34,7 +34,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if(FirebaseAuth.getInstance().getCurrentUser() == null) {
+        FloatingActionButton intent = (FloatingActionButton)findViewById(R.id.intent);
+        intent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,InputActivity.class));
+
+            }
+        });
+
+
+        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
             // Start sign in/sign up activity
             startActivityForResult(
                     AuthUI.getInstance().createSignInIntentBuilder().build(),
@@ -43,18 +53,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else {
             // User is already signed in. Therefore, display
             // a welcome Toast
-            Toast.makeText(this,
+          /*  Toast.makeText(this,
                     "Welcome " + FirebaseAuth.getInstance()
                             .getCurrentUser()
                             .getDisplayName(),
                     Toast.LENGTH_LONG)
-                    .show();
+                    .show(); */
 
             displayChatMessages();
         }
-
-        Button button2 = (Button)findViewById(R.id.button2);
-        button2.setOnClickListener(this);
 
     }
 
@@ -89,7 +96,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId() == R.id.menu_sign_out) {
-            AuthUI.getInstance().signOut(this)
+
+            /*AuthUI.getInstance().signOut(this)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
@@ -101,7 +109,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             // Close activity
                             finish();
                         }
-                    });
+                    }); */
+
+            startActivityForResult(
+                    AuthUI.getInstance().createSignInIntentBuilder().build(),
+                    SIGN_IN_REQUEST_CODE
+            );
         }
         return true;
     }
@@ -115,11 +128,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             protected void populateView(View v, ChatMessage model, int position) {
                 // Get references to the views of message.xml
+                TextView messageLocation = (TextView)v.findViewById(R.id.message_location);
                 TextView messageText = (TextView)v.findViewById(R.id.message_text);
                 TextView messageUser = (TextView)v.findViewById(R.id.message_user);
                 TextView messageTime = (TextView)v.findViewById(R.id.message_time);
 
                 // Set their text
+                messageLocation.setText(model.getMessageLocation());
                 messageText.setText(model.getMessageText());
                 messageUser.setText(model.getMessageUser());
                 messageTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)",
@@ -130,8 +145,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         listOfMessages.setAdapter(adapter);
     }
 
-    @Override
-    public void onClick(View v) {
-        startActivity(new Intent(MainActivity.this,InputActivity.class));
-    }
 }

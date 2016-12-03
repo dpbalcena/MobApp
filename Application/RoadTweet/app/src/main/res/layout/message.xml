@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="200dp"
     android:background="@color/white">
 
     <TextView
@@ -13,10 +13,10 @@
         android:textStyle="normal|bold"
         android:textColor="@color/lighterRed"
         android:textSize="14sp"
-        android:paddingTop="5dp"
+        android:paddingTop="15dp"
         android:paddingBottom="0dp"
         android:paddingRight="10dp"
-        android:paddingLeft="10dp"/>
+        android:paddingLeft="20dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -26,7 +26,7 @@
         android:id="@+id/message_time"
         android:textColor="@color/gray"
         android:textSize="10sp"
-        android:paddingTop="5dp"
+        android:paddingTop="15dp"
         android:paddingBottom="0dp"
         android:paddingRight="10dp"
         android:paddingLeft="10dp"/>
@@ -35,14 +35,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/message_user"
+        android:textStyle="italic"
         android:layout_alignParentStart="true"
         android:layout_marginTop="2dp"
+        android:id="@+id/message_location"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="14sp"
+        android:paddingBottom="5dp"
+        android:paddingTop="0dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/message_location"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
         android:id="@+id/message_text"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="14sp"
         android:paddingBottom="5dp"
         android:paddingTop="0dp"
-        android:paddingLeft="10dp"
+        android:paddingLeft="20dp"
         android:paddingRight="10dp"/>
 
 </RelativeLayout>
