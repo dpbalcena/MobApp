@@ -1,8 +1,10 @@
 package ph.edu.apc.roadtweet;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -73,10 +75,18 @@ public class InputActivity extends AppCompatActivity {
 
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId() == R.id.menu_sign_out) {
-            startActivityForResult(
-                    AuthUI.getInstance().createSignInIntentBuilder().build(),
-                    SIGN_IN_REQUEST_CODE
-            );
+            AlertDialog alertDialog = new AlertDialog.Builder(InputActivity.this).create();
+            alertDialog.setTitle("Sign Out");
+            alertDialog.setMessage("Are you sure you want to Sign Out?");
+            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            startActivityForResult(
+                                    AuthUI.getInstance().createSignInIntentBuilder().build(),
+                                    SIGN_IN_REQUEST_CODE );
+                        }
+                    });
+            alertDialog.show();
         }
         return true;
     }

@@ -1,9 +1,11 @@
 package ph.edu.apc.roadtweet;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.format.DateFormat;
@@ -19,6 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
+import com.google.firebase.auth.FirebaseUser;
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -112,10 +115,18 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }); */
 
-            startActivityForResult(
-                    AuthUI.getInstance().createSignInIntentBuilder().build(),
-                    SIGN_IN_REQUEST_CODE
-            );
+            AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+            alertDialog.setTitle("Sign Out");
+            alertDialog.setMessage("Are you sure you want to Sign Out?");
+            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            startActivityForResult(
+                                    AuthUI.getInstance().createSignInIntentBuilder().build(),
+                                    SIGN_IN_REQUEST_CODE );
+                        }
+                    });
+            alertDialog.show();
         }
         return true;
     }
@@ -126,9 +137,17 @@ public class MainActivity extends AppCompatActivity {
 
         listOfMessages.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                
-                adapter.getRef(position).removeValue();
+            public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
+                AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+                alertDialog.setTitle("Delete");
+                alertDialog.setMessage("Are you sure you want to delete?");
+                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                adapter.getRef(position).removeValue();
+                            }
+                        });
+                alertDialog.show();
                 return true;
             }
         });
