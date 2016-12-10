@@ -2,6 +2,9 @@ package ph.edu.apc.roadtweet;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -16,6 +19,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,6 +31,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
+import com.squareup.picasso.Picasso;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -105,10 +110,7 @@ public class MainActivity extends AppCompatActivity {
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
-                            Toast.makeText(MainActivity.this,
-                                    "You have been signed out.",
-                                    Toast.LENGTH_LONG)
-                                    .show();
+
 
                             // Close activity
                             finish();
@@ -124,6 +126,10 @@ public class MainActivity extends AppCompatActivity {
                             startActivityForResult(
                                     AuthUI.getInstance().createSignInIntentBuilder().build(),
                                     SIGN_IN_REQUEST_CODE );
+                            Toast.makeText(MainActivity.this,
+                                    "You have been signed out.",
+                                    Toast.LENGTH_LONG)
+                                    .show();
                         }
                     });
             alertDialog.show();
@@ -157,12 +163,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             protected void populateView(View v, ChatMessage model, int position) {
                 // Get references to the views of message.xml
+                ImageView messageImage = (ImageView)v.findViewById(R.id.message_image);
                 TextView messageLocation = (TextView)v.findViewById(R.id.message_location);
                 TextView messageText = (TextView)v.findViewById(R.id.message_text);
                 TextView messageUser = (TextView)v.findViewById(R.id.message_user);
                 TextView messageTime = (TextView)v.findViewById(R.id.message_time);
 
                 // Set their text
+
+                Picasso.with(MainActivity.this).load(model.getMessageImage()).into(messageImage);
                 messageLocation.setText(model.getMessageLocation());
                 messageText.setText(model.getMessageText());
                 messageUser.setText(model.getMessageUser());

@@ -31,13 +31,39 @@
         android:textStyle="italic"
         android:layout_marginBottom="5dp"/>
 
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="120dp"
+        android:hint="Enter your roadtweet here:"
+        android:id="@+id/input"
+        android:layout_below="@+id/inputLocation"
+        android:layout_alignParentStart="true" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_below="@+id/inputLocation"
-            android:hint="Enter your roadtweet here:"
-            android:id="@+id/input" />
+    <Button
+        android:text=""
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonChoose"
+        android:layout_alignBaseline="@+id/input"
+        android:layout_alignBottom="@+id/input"
+        android:layout_alignParentEnd="true" />
+    <Button
+        android:text=""
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonUpload"
+        android:layout_alignBaseline="@+id/input"
+        android:layout_below="@+id/buttonChoose"
+        android:layout_alignBottom="@+id/input"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="80dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/input"
+        android:id="@+id/imageView" />
 
 
 </RelativeLayout>
