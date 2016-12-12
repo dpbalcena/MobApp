@@ -97,7 +97,7 @@ public class InputActivity extends AppCompatActivity implements View.OnClickList
                                 //if the upload is not successfull
                                 //hiding the progress dialog
                                 progressDialog.dismiss();
-                                //and displaying error message
+                                //and displaying error tweet
                                 Toast.makeText(getApplicationContext(), exception.getMessage(), Toast.LENGTH_LONG).show();
                             }
                         })

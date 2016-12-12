@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:id="@+id/message_user"
+        android:id="@+id/tweet_user"
         android:textStyle="normal|bold"
         android:textColor="@color/lighterRed"
         android:textSize="14sp"
@@ -21,9 +21,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/message_user"
+        android:layout_alignBottom="@+id/tweet_user"
         android:layout_alignParentEnd="true"
-        android:id="@+id/message_time"
+        android:id="@+id/tweet_time"
         android:textColor="@color/gray"
         android:textSize="10sp"
         android:paddingTop="15dp"
@@ -34,11 +34,11 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/message_user"
+        android:layout_below="@+id/tweet_user"
         android:textStyle="italic"
         android:layout_alignParentStart="true"
         android:layout_marginTop="2dp"
-        android:id="@+id/message_location"
+        android:id="@+id/tweet_location"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="14sp"
         android:paddingBottom="5dp"
@@ -49,10 +49,10 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/message_location"
+        android:layout_below="@+id/tweet_location"
         android:layout_alignParentStart="true"
         android:layout_marginTop="5dp"
-        android:id="@+id/message_text"
+        android:id="@+id/tweet_text"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="14sp"
         android:paddingBottom="5dp"
@@ -65,7 +65,7 @@
         android:layout_height="250dp"
         android:layout_marginBottom="5dp"
         android:layout_marginTop="5dp"
-        android:layout_below="@+id/message_text"
-        android:id="@+id/message_image" />
+        android:layout_below="@+id/tweet_text"
+        android:id="@+id/tweet_image" />
 
 </RelativeLayout>

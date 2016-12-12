@@ -8,57 +8,57 @@ import java.util.Date;
 
 public class Tweets {
 
-    private String messageText;
-    private String messageUser;
-    private long messageTime;
-    private String messageLocation;
-    private String messageImage;
+    private String tweetText;
+    private String tweetUser;
+    private long tweetTime;
+    private String tweetLocation;
+    private String tweetImage;
 
-    public Tweets(String messageImage, String messageLocation, String messageText, String messageUser) {
-        this.messageImage = messageImage;
-        this.messageLocation = messageLocation;
-        this.messageText = messageText;
-        this.messageUser = messageUser;
-        messageTime = new Date().getTime();
+    public Tweets(String tweetImage, String tweetLocation, String tweetText, String tweetUser) {
+        this.tweetImage = tweetImage;
+        this.tweetLocation = tweetLocation;
+        this.tweetText = tweetText;
+        this.tweetUser = tweetUser;
+        tweetTime = new Date().getTime();
     }
 
     public Tweets(){
 
     }
 
-    public String getMessageImage() {
-        return messageImage;
+    public String getTweetImage() {
+        return tweetImage;
     }
-    public void setMessageImage(String messageImage) {
-        this.messageImage = messageImage;
-    }
-
-    public String getMessageLocation() {
-        return messageLocation;
-    }
-    public void setMessageLocation(String messageLocation) {
-        this.messageLocation = messageLocation;
+    public void setTweetImage(String tweetImage) {
+        this.tweetImage = tweetImage;
     }
 
-    public String getMessageText() {
-        return messageText;
+    public String getTweetLocation() {
+        return tweetLocation;
     }
-    public void setMessageText(String messageText) {
-        this.messageText = messageText;
-    }
-
-    public String getMessageUser() {
-        return messageUser;
-    }
-    public void setMessageUser(String messageUser) {
-        this.messageUser = messageUser;
+    public void setTweetLocation(String tweetLocation) {
+        this.tweetLocation = tweetLocation;
     }
 
-    public long getMessageTime() {
-        return messageTime;
+    public String getTweetText() {
+        return tweetText;
     }
-    public void setMessageTime(long messageTime) {
-        this.messageTime = messageTime;
+    public void setTweetText(String tweetText) {
+        this.tweetText = tweetText;
+    }
+
+    public String getTweetUser() {
+        return tweetUser;
+    }
+    public void setTweetUser(String tweetUser) {
+        this.tweetUser = tweetUser;
+    }
+
+    public long getTweetTime() {
+        return tweetTime;
+    }
+    public void setTweetTime(long tweetTime) {
+        this.tweetTime = tweetTime;
     }
 
 }

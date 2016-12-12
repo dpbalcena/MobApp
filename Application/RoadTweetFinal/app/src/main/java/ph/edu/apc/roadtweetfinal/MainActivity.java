@@ -113,23 +113,23 @@ public class MainActivity extends AppCompatActivity
         });
 
         adapter = new FirebaseListAdapter<Tweets>(this, Tweets.class,
-                R.layout.message, FirebaseDatabase.getInstance().getReference()) {
+                R.layout.tweet, FirebaseDatabase.getInstance().getReference()) {
             @Override
             protected void populateView(View v, Tweets model, int position) {
-                // Get references to the views of message.xml
-                ImageView messageImage = (ImageView)v.findViewById(R.id.message_image);
-                TextView messageLocation = (TextView)v.findViewById(R.id.message_location);
-                TextView messageText = (TextView)v.findViewById(R.id.message_text);
-                TextView messageUser = (TextView)v.findViewById(R.id.message_user);
-                TextView messageTime = (TextView)v.findViewById(R.id.message_time);
+                // Get references to the views of tweet.xml
+                ImageView tweetImage = (ImageView)v.findViewById(R.id.tweet_image);
+                TextView tweetLocation = (TextView)v.findViewById(R.id.tweet_location);
+                TextView tweetText = (TextView)v.findViewById(R.id.tweet_text);
+                TextView tweetUser = (TextView)v.findViewById(R.id.tweet_user);
+                TextView tweetTime = (TextView)v.findViewById(R.id.tweet_time);
 
                 // Set their text
-                Picasso.with(MainActivity.this).load(model.getMessageImage()).into(messageImage);
-                messageLocation.setText(model.getMessageLocation());
-                messageText.setText(model.getMessageText());
-                messageUser.setText(model.getMessageUser());
-                messageTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)",
-                        model.getMessageTime()));
+                Picasso.with(MainActivity.this).load(model.getTweetImage()).into(tweetImage);
+                tweetLocation.setText(model.getTweetLocation());
+                tweetText.setText(model.getTweetText());
+                tweetUser.setText(model.getTweetUser());
+                tweetTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)",
+                        model.getTweetTime()));
             }
         };
 
