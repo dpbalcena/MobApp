@@ -2,13 +2,10 @@ package ph.edu.apc.roadtweetfinal;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Matrix;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.text.format.DateFormat;
-import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -16,7 +13,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -27,7 +23,6 @@ import android.widget.Toast;
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
@@ -35,7 +30,7 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private static final int SIGN_IN_REQUEST_CODE = 1;
-    private FirebaseListAdapter<ChatMessage> adapter;
+    private FirebaseListAdapter<Tweets> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +55,7 @@ public class MainActivity extends AppCompatActivity
                     SIGN_IN_REQUEST_CODE
             );
         } else {
-            displayChatMessages();
+            displayTweets();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -86,7 +81,7 @@ public class MainActivity extends AppCompatActivity
                 name.setText(FirebaseAuth.getInstance()
                         .getCurrentUser()
                         .getDisplayName());
-                displayChatMessages();
+                displayTweets();
             } else {
                 Toast.makeText(this,
                         "We couldn't sign you in. Please try again later.",
@@ -97,7 +92,7 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    private void displayChatMessages() {
+    private void displayTweets() {
         ListView listOfMessages = (ListView)findViewById(R.id.list_of_messages);
 
        listOfMessages.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
@@ -117,10 +112,10 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        adapter = new FirebaseListAdapter<ChatMessage>(this, ChatMessage.class,
+        adapter = new FirebaseListAdapter<Tweets>(this, Tweets.class,
                 R.layout.message, FirebaseDatabase.getInstance().getReference()) {
             @Override
-            protected void populateView(View v, ChatMessage model, int position) {
+            protected void populateView(View v, Tweets model, int position) {
                 // Get references to the views of message.xml
                 ImageView messageImage = (ImageView)v.findViewById(R.id.message_image);
                 TextView messageLocation = (TextView)v.findViewById(R.id.message_location);
@@ -129,7 +124,6 @@ public class MainActivity extends AppCompatActivity
                 TextView messageTime = (TextView)v.findViewById(R.id.message_time);
 
                 // Set their text
-
                 Picasso.with(MainActivity.this).load(model.getMessageImage()).into(messageImage);
                 messageLocation.setText(model.getMessageLocation());
                 messageText.setText(model.getMessageText());

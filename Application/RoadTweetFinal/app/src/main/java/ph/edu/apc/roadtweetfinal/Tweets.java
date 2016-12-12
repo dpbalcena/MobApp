@@ -6,7 +6,7 @@ import java.util.Date;
  * Created by School on 11/30/2016.
  */
 
-public class ChatMessage {
+public class Tweets {
 
     private String messageText;
     private String messageUser;
@@ -14,7 +14,7 @@ public class ChatMessage {
     private String messageLocation;
     private String messageImage;
 
-    public ChatMessage(String messageImage, String messageLocation, String messageText, String messageUser) {
+    public Tweets(String messageImage, String messageLocation, String messageText, String messageUser) {
         this.messageImage = messageImage;
         this.messageLocation = messageLocation;
         this.messageText = messageText;
@@ -22,7 +22,7 @@ public class ChatMessage {
         messageTime = new Date().getTime();
     }
 
-    public ChatMessage(){
+    public Tweets(){
 
     }
 
